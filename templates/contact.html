@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+<main>
+  <section class="container page-header">
+    <h2>Contact</h2>
+  </section>
+
+  <section class="container contact-section">
+    <form method="POST" action="{{ url_for('contact') }}">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" rows="6" placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+  </section>
+</main>
+
+{% include 'footer.html' %}

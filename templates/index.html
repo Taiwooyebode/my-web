@@ -1,0 +1,65 @@
+
+{% include "header.html"%}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{url_for('static', filename='assets/img/home-bg.jpg')}})">
+        <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center align-items-center">
+        <div class="col-md-3 text-center">
+            <img src="{{ url_for('static', filename='assets/img/images.jpeg') }}" alt="My photo"  class="rounded-circle border border-2 border-light shadow-sm img-fluid mx-auto d-block" style="width:195px; height:200px; object-fit:cover;">
+        </div>
+        <div class="col-md-7">
+            <div class="site-heading text-center text-md-start">
+                <h2 class="fw-bold">Hi, I'm Emmanuel</h2>
+                <p>A Python developer skilled in Flask, Pandas, and Matplotlib. I specialize in backend development and data analysis, and I'm currently expanding into machine learning.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </header>
+        <!-- Main Content -->
+<main class="container px-4 px-lg-5">
+  <div class="text-center mb-5">
+    <img src="{{ url_for('static', filename='assets/img/python.png') }}" alt="Logo" class="logo mb-3" >
+    <h2 class="section-title">My Expertise</h2>
+    <p class="section-subtitle">Python developer focused on backend systems, data analysis, and intelligent solutions.</p>
+  </div>
+
+  <div class="row gx-4 gx-lg-5 text-center expertise-grid">
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="skill-card">
+        <img src="{{ url_for('static', filename='assets/img/download.png') }}" alt="Flask" class="skill-icon" width="80" height="80">
+        <h3>Flask</h3>
+        <p>Building secure, fast, and scalable web backends and APIs using Flask and modern Python tools.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="skill-card">
+        <img src="{{ url_for('static', filename='assets/img/pandas.png') }}" alt="Pandas" class="skill-icon" width="80" height="80">
+        <h3>Pandas</h3>
+        <p>Expert in data wrangling and transformation, turning raw data into structured, useful insights.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="skill-card">
+        <img src="{{ url_for('static', filename='assets/img/matplot.png') }}" alt="Matplotlib" class="skill-icon" width="80" height="80">
+        <h3>Matplotlib</h3>
+        <p>Creating clean, expressive visualizations for analytics dashboards and reports.</p>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="skill-card">
+        <img src="{{ url_for('static', filename='assets/img/ml.png') }}" alt="Machine Learning" class="skill-icon" width="80" height="80">
+        <h3>Machine Learning</h3>
+        <p>Currently expanding into ML to integrate predictive intelligence into backend systems.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+        <!-- Footer-->
+        {% include "footer.html" %}
