@@ -1,8 +1,13 @@
 from flask import Flask, render_template,request
 import requests
 import smtplib
-my_mail="belugarogue@gmail.com"
-password="juctjjmblsrpiiio"
+import  os
+from dotenv import load_dotenv
+load_dotenv()
+my_mail=os.environ.get("my_mail")
+
+password=os.environ.get("password")
+
 
 app=Flask(__name__)
 
@@ -33,9 +38,9 @@ def email_sender(name,phone,email_,message):
                      f"\n"
                      f"Name: {name}\n"
                      f"Email: {email_}\n"
-                     f"Contact: {phone}\n"
+                     f"CoStact: {phone}\n"
                      f"Message: {message}\n")
-        connection.sendmail(from_addr=my_mail, to_addrs="taiwooyebode9@gmail.com", msg=email_body)
+        connection.sendmail(from_addr=my_mail, to_addrs=os.environ.get("to_address"), msg=email_body)
 
 
 if __name__=="__main__":
