@@ -38,7 +38,7 @@ def email_sender(name,phone,email_,message):
                      f"\n"
                      f"Name: {name}\n"
                      f"Email: {email_}\n"
-                     f"CoStact: {phone}\n"
+                     f"Contact: {phone}\n"
                      f"Message: {message}\n")
         connection.sendmail(from_addr=my_mail, to_addrs=os.environ.get("to_address"), msg=email_body)
 
