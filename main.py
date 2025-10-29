@@ -1,5 +1,4 @@
 from flask import Flask, render_template,request
-import requests
 import smtplib
 import  os
 from dotenv import load_dotenv
