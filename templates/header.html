@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>My website</title>
         <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,19 +14,51 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css')}}" rel="stylesheet" />
+        <!-- Removed custom override to avoid forcing a white navbar */ -->
+        <style>
+            /* Ensure masthead background image displays and doesn't get hidden */
+            .masthead {
+                min-height: 60vh;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-color: #111; /* dark fallback if image fails to load */
+                padding-top: 5rem; /* leave space for the absolute navbar */
+            }
+            /* Keep nav links visible on top of the masthead */
+            .navbar .nav-link,
+            .navbar .navbar-brand {
+                color: rgba(255,255,255,0.95) !important;
+            }
+            /* On small screens make the collapsed menu full width and dark */
+            @media (max-width: 991.98px) {
+                .navbar-collapse {
+                    background: rgba(0,0,0,0.6);
+                    padding: 1rem;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
+        <!-- Use a transparent dark navbar so the masthead background image is visible
+             and the hamburger icon is white on mobile. -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" id="mainNav" style="background: transparent !important; position: absolute; top: 0; left: 0; right: 0; z-index: 1030;">
+             <div class="container px-4 px-lg-5">
+                 <!-- Brand -->
+                <a class="navbar-brand text-white" href="{{ url_for('home') }}">My Website</a>
 
+                 <!-- Mobile toggler -->
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('home')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('about')}}">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('contact')}}">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                 <div class="collapse navbar-collapse" id="navbarResponsive">
+                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-white" href="{{url_for('home')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-white" href="{{url_for('about')}}">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-white" href="{{url_for('contact')}}">Contact</a></li>
+                     </ul>
+                 </div>
+             </div>
+         </nav>
