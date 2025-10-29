@@ -13,17 +13,30 @@
             </div>
         </header>
         <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-<p>I'm a Python developer skilled in building clean and efficient backend systems using Flask. I enjoy creating scalable applications that combine functionality with simplicity.</p>
-<p>I have strong experience with data handling and analysis using Pandas and visualization through Matplotlib, allowing me to turn raw data into clear insights.</p>
-<p>Currently, I'm expanding my expertise into machine learning, exploring how to apply intelligent models to enhance backend systems and data-driven solutions.</p>
+     <section class="py-5 bg-light text-center"> 
+  <div class="container">
+    <img src="{{ url_for('static', filename='assets/image.jpg') }}"
+         alt="Profile photo"
+         class="rounded-circle border border-2 border-light shadow-sm img-fluid mx-auto d-block mb-4"
+         style="width:140px; height:140px; object-fit:cover; background-color:#f8f9fa;">
 
-                    </div>
-                </div>
-            </div>
-        </main>
+    <h2 class="fw-bold mb-2">Hi, I'm Emmanuel</h2>
+  <p class="text-muted mb-4 px-md-5">
+  A passionate Python developer with a strong foundation in backend development using Flask. I build scalable, efficient, and secure web applications that deliver real value. 
+  I'm experienced in data analysis and visualization with Pandas and Matplotlib, transforming complex datasets into meaningful insights. 
+  I enjoy writing clean, maintainable code and constantly seek to improve my problem-solving skills. 
+  Currently, I’m expanding into artificial intelligence and machine learning to create smarter, data-driven applications that bridge the gap between software and intelligence.
+</p>
+
+
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <span class="badge bg-primary fs-6 px-3 py-2">Flask</span>
+      <span class="badge bg-success fs-6 px-3 py-2">Data Analysis</span>
+      <span class="badge bg-info text-dark fs-6 px-3 py-2">Matplotlib</span>
+      <span class="badge bg-warning text-dark fs-6 px-3 py-2">AI & ML</span>
+    </div>
+  </div>
+</section>
+
         <!-- Footer-->
      {% include "footer.html" %}
